@@ -1024,7 +1024,7 @@ namespace AdventOfCode2024
                         list1.Add(int.Parse(values.First()));
                         list2.Add(int.Parse(values.Last()));
                     });
-                return new List<List<int>> { list1, list2 };
+                return [list1, list2];
             }
         }
 
@@ -1056,7 +1056,7 @@ namespace AdventOfCode2024
 
         public static Int32 Similiarity(List<Int32> list1, List<Int32> list2)
         {
-            if(!list1.Any()) return 0;
+            if(list1.Count == 0) return 0;
             var list1Next = list1.Take(new Range(1, list1.Count)).ToList();
 
             return list1.First() * list2.Count(e => e == list1.First()) + Similiarity(list1Next, list2);

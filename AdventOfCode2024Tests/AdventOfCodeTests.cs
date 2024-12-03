@@ -31,5 +31,20 @@
         {
             Assert.AreEqual(expected, Day1.Similiarity(first.ToList(), second.ToList()));
         }
+
+
+        [TestMethod()]
+        [DataRow(@"xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))", 161)]
+        public void ComputeMulTest(string input, int expected)
+        {
+            Assert.AreEqual(expected, Day3.Multiply(input));
+        }
+
+        [TestMethod()]
+        [DataRow(@"xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))", 48)]
+        public void ComputeMulTest2(string input, int expected)
+        {
+            Assert.AreEqual(expected, Day3.Multiply2(input));
+        }
     }
 }

@@ -34,5 +34,17 @@ namespace AdventOfCode2024
             Task.WaitAll([.. taskList]);
             return results.Count(e => e);
         }
+
+        public int Day3Compute()
+        {
+            var input = new Day3().Data;
+            return Day3.Multiply(input);
+        }
+
+        public int Day3BCompute()
+        {
+            var input = new Day3().Data;
+            return Day3.Multiply2(input);
+        }
     }
 }
