@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2024.Tests
+﻿using AdventOfCode2024;
+
+namespace AdventOfCode2024.Tests
 {
     [TestClass()]
     public class AdventOfCodeTests
@@ -46,5 +48,165 @@
         {
             Assert.AreEqual(expected, Day3.Multiply2(input));
         }
+
+        [TestMethod()]
+        [DataRow(@"....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX", 5)]
+        [DataRow(@"MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX", 5)]
+        public void BasicCountTest(string input, int expectedLine)
+        {
+            Assert.AreEqual(expectedLine, Day4.BasicCount(input));
+        }
+
+
+        [TestMethod()]
+        [DataRow(@"....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX", 3)]
+        [DataRow(@"MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX", 3)]
+        public void VerticalCountTest(string input, int expectedColonnes)
+        {
+            Assert.AreEqual(expectedColonnes, Day4.VerticalCount(input));
+        }
+
+    
+        [TestMethod()]
+        [DataRow(@"....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX", 5)]
+        [DataRow(@"MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX", 5)]
+        public void DiagRCountTest(string input, int expectedDiagR)
+        {
+            Assert.AreEqual(expectedDiagR, Day4.DiagonalRCount(input));
+        }
+
+        [TestMethod()]
+        [DataRow(@"....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX", 5)]
+        [DataRow(@"MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX", 5)]
+        public void DiagLCountTest(string input, int expectedDiagL)
+        {
+            Assert.AreEqual(expectedDiagL, Day4.DiagonalLCount(input));
+        }
+
+        [TestMethod()]
+        [DataRow(@"....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX", 18)]
+        [DataRow(@"MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX", 18)]
+        public void WordFinderTest(string input, int expected)
+        {
+            Assert.AreEqual(expected, Day4.TotalCount(input));
+        }
+
+        [TestMethod()]
+        [DataRow(@".M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........", 9)]
+        [DataRow(@"MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX", 9)]
+        public void CrossFinderTest(string input, int expected)
+        {
+            Assert.AreEqual(expected, Day4.CrossCount(input));
+        }
+
     }
 }
+
