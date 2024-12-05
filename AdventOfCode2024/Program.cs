@@ -12,6 +12,8 @@
             Console.WriteLine("Day 3 B => " + computeur.Day3BCompute());
             Console.WriteLine("Day 4 A => " + computeur.Day4Compute());
             Console.WriteLine("Day 4 B => " + computeur.Day4BCompute());
+            Console.WriteLine("Day 5 A => " + computeur.Day5Compute());
+            Console.WriteLine("Day 5 B => " + computeur.Day5BCompute());
         }
     }
 }

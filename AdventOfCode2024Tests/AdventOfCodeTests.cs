@@ -1,4 +1,5 @@
-﻿using AdventOfCode2024;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AdventOfCode2024;
 
 namespace AdventOfCode2024.Tests
 {
@@ -102,7 +103,7 @@ MXMXAXMASX", 3)]
             Assert.AreEqual(expectedColonnes, Day4.VerticalCount(input));
         }
 
-    
+
         [TestMethod()]
         [DataRow(@"....XXMAS.
 .SAMXMS...
@@ -207,6 +208,71 @@ MXMXAXMASX", 9)]
             Assert.AreEqual(expected, Day4.CrossCount(input));
         }
 
+        [TestMethod()]
+        [DataRow(@"47|53
+97|13
+97|61
+97|47
+75|29
+61|13
+75|53
+29|13
+97|29
+53|29
+61|53
+97|53
+61|29
+47|13
+75|47
+97|75
+47|61
+75|61
+47|29
+75|13
+53|13", @"75,47,61,53,29
+97,61,53,29,13
+75,29,13
+75,97,47,61,53
+61,13,29
+97,13,75,29,47", 143)]
+        public void Day5ComputeTest(string rules, string updates, int expected)
+        {
+            var day5 = new Day5(rules, updates);
+            Assert.AreEqual(expected, Day5.CheckGoodUpdates(day5.Updates, day5.Rules));
+        }
+
+        [TestMethod()]
+        [DataRow(@"47|53
+97|13
+97|61
+97|47
+75|29
+61|13
+75|53
+29|13
+97|29
+53|29
+61|53
+97|53
+61|29
+47|13
+75|47
+97|75
+47|61
+75|61
+47|29
+75|13
+53|13", @"75,47,61,53,29
+97,61,53,29,13
+75,29,13
+75,97,47,61,53
+61,13,29
+97,13,75,29,47", 123)]
+        public void Day5BadComputeTest(string rules, string updates, int expected)
+        {
+            var day5 = new Day5(rules, updates);
+            Assert.AreEqual(expected, Day5.CheckBadUpdates(day5.Updates, day5.Rules));
+        }
     }
 }
 

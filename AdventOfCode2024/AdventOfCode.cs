@@ -58,5 +58,17 @@ namespace AdventOfCode2024
             var input = new Day4().Data;
             return Day4.CrossCount(input);
         }
+
+        public int Day5Compute()
+        {
+            var day5 = new Day5();
+            return Day5.CheckGoodUpdates(day5.Updates, day5.Rules);
+        }
+
+        public int Day5BCompute()
+        {
+            var day5 = new Day5();
+            return Day5.CheckBadUpdates(day5.Updates, day5.Rules);
+        }
     }
 }
