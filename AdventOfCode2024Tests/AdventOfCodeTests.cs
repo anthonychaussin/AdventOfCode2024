@@ -51,26 +51,8 @@ namespace AdventOfCode2024.Tests
         }
 
         [TestMethod()]
-        [DataRow(@"....XXMAS.
-.SAMXMS...
-...S..A...
-..A.A.MS.X
-XMASAMX.MM
-X.....XA.A
-S.S.S.S.SS
-.A.A.A.A.A
-..M.M.M.MM
-.X.X.XMASX", 5)]
-        [DataRow(@"MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX", 5)]
+        [DataRow("....XXMAS.\r\n.SAMXMS...\r\n...S..A...\r\n..A.A.MS.X\r\nXMASAMX.MM\r\nX.....XA.A\r\nS.S.S.S.SS\r\n.A.A.A.A.A\r\n..M.M.M.MM\r\n.X.X.XMASX", 5)]
+        [DataRow("MMMSXXMASM\r\nMSAMXMSMSA\r\nAMXSXMAAMM\r\nMSAMASMSMX\r\nXMASAMXAMM\r\nXXAMMXXAMA\r\nSMSMSASXSS\r\nSAXAMASAAA\r\nMAMMMXMMMM\r\nMXMXAXMASX", 5)]
         public void BasicCountTest(string input, int expectedLine)
         {
             Assert.AreEqual(expectedLine, Day4.BasicCount(input));
@@ -78,26 +60,8 @@ MXMXAXMASX", 5)]
 
 
         [TestMethod()]
-        [DataRow(@"....XXMAS.
-.SAMXMS...
-...S..A...
-..A.A.MS.X
-XMASAMX.MM
-X.....XA.A
-S.S.S.S.SS
-.A.A.A.A.A
-..M.M.M.MM
-.X.X.XMASX", 3)]
-        [DataRow(@"MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX", 3)]
+        [DataRow("....XXMAS.\r\n.SAMXMS...\r\n...S..A...\r\n..A.A.MS.X\r\nXMASAMX.MM\r\nX.....XA.A\r\nS.S.S.S.SS\r\n.A.A.A.A.A\r\n..M.M.M.MM\r\n.X.X.XMASX", 3)]
+        [DataRow("MMMSXXMASM\r\nMSAMXMSMSA\r\nAMXSXMAAMM\r\nMSAMASMSMX\r\nXMASAMXAMM\r\nXXAMMXXAMA\r\nSMSMSASXSS\r\nSAXAMASAAA\r\nMAMMMXMMMM\r\nMXMXAXMASX", 3)]
         public void VerticalCountTest(string input, int expectedColonnes)
         {
             Assert.AreEqual(expectedColonnes, Day4.VerticalCount(input));
@@ -105,136 +69,40 @@ MXMXAXMASX", 3)]
 
 
         [TestMethod()]
-        [DataRow(@"....XXMAS.
-.SAMXMS...
-...S..A...
-..A.A.MS.X
-XMASAMX.MM
-X.....XA.A
-S.S.S.S.SS
-.A.A.A.A.A
-..M.M.M.MM
-.X.X.XMASX", 5)]
-        [DataRow(@"MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX", 5)]
+        [DataRow("....XXMAS.\r\n.SAMXMS...\r\n...S..A...\r\n..A.A.MS.X\r\nXMASAMX.MM\r\nX.....XA.A\r\nS.S.S.S.SS\r\n.A.A.A.A.A\r\n..M.M.M.MM\r\n.X.X.XMASX", 5)]
+        [DataRow("MMMSXXMASM\r\nMSAMXMSMSA\r\nAMXSXMAAMM\r\nMSAMASMSMX\r\nXMASAMXAMM\r\nXXAMMXXAMA\r\nSMSMSASXSS\r\nSAXAMASAAA\r\nMAMMMXMMMM\r\nMXMXAXMASX", 5)]
         public void DiagRCountTest(string input, int expectedDiagR)
         {
             Assert.AreEqual(expectedDiagR, Day4.DiagonalRCount(input));
         }
 
         [TestMethod()]
-        [DataRow(@"....XXMAS.
-.SAMXMS...
-...S..A...
-..A.A.MS.X
-XMASAMX.MM
-X.....XA.A
-S.S.S.S.SS
-.A.A.A.A.A
-..M.M.M.MM
-.X.X.XMASX", 5)]
-        [DataRow(@"MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX", 5)]
+        [DataRow("....XXMAS.\r\n.SAMXMS...\r\n...S..A...\r\n..A.A.MS.X\r\nXMASAMX.MM\r\nX.....XA.A\r\nS.S.S.S.SS\r\n.A.A.A.A.A\r\n..M.M.M.MM\r\n.X.X.XMASX", 5)]
+        [DataRow("MMMSXXMASM\r\nMSAMXMSMSA\r\nAMXSXMAAMM\r\nMSAMASMSMX\r\nXMASAMXAMM\r\nXXAMMXXAMA\r\nSMSMSASXSS\r\nSAXAMASAAA\r\nMAMMMXMMMM\r\nMXMXAXMASX", 5)]
         public void DiagLCountTest(string input, int expectedDiagL)
         {
             Assert.AreEqual(expectedDiagL, Day4.DiagonalLCount(input));
         }
 
         [TestMethod()]
-        [DataRow(@"....XXMAS.
-.SAMXMS...
-...S..A...
-..A.A.MS.X
-XMASAMX.MM
-X.....XA.A
-S.S.S.S.SS
-.A.A.A.A.A
-..M.M.M.MM
-.X.X.XMASX", 18)]
-        [DataRow(@"MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX", 18)]
+        [DataRow("....XXMAS.\r\n.SAMXMS...\r\n...S..A...\r\n..A.A.MS.X\r\nXMASAMX.MM\r\nX.....XA.A\r\nS.S.S.S.SS\r\n.A.A.A.A.A\r\n..M.M.M.MM\r\n.X.X.XMASX", 18)]
+        [DataRow("MMMSXXMASM\r\nMSAMXMSMSA\r\nAMXSXMAAMM\r\nMSAMASMSMX\r\nXMASAMXAMM\r\nXXAMMXXAMA\r\nSMSMSASXSS\r\nSAXAMASAAA\r\nMAMMMXMMMM\r\nMXMXAXMASX", 18)]
         public void WordFinderTest(string input, int expected)
         {
             Assert.AreEqual(expected, Day4.TotalCount(input));
         }
 
         [TestMethod()]
-        [DataRow(@".M.S......
-..A..MSMS.
-.M.S.MAA..
-..A.ASMSM.
-.M.S.M....
-..........
-S.S.S.S.S.
-.A.A.A.A..
-M.M.M.M.M.
-..........", 9)]
-        [DataRow(@"MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX", 9)]
+        [DataRow(".M.S......\r\n..A..MSMS.\r\n.M.S.MAA..\r\n..A.ASMSM.\r\n.M.S.M....\r\n..........\r\nS.S.S.S.S.\r\n.A.A.A.A..\r\nM.M.M.M.M.\r\n..........", 9)]
+        [DataRow("MMMSXXMASM\r\nMSAMXMSMSA\r\nAMXSXMAAMM\r\nMSAMASMSMX\r\nXMASAMXAMM\r\nXXAMMXXAMA\r\nSMSMSASXSS\r\nSAXAMASAAA\r\nMAMMMXMMMM\r\nMXMXAXMASX", 9)]
         public void CrossFinderTest(string input, int expected)
         {
             Assert.AreEqual(expected, Day4.CrossCount(input));
         }
 
         [TestMethod()]
-        [DataRow(@"47|53
-97|13
-97|61
-97|47
-75|29
-61|13
-75|53
-29|13
-97|29
-53|29
-61|53
-97|53
-61|29
-47|13
-75|47
-97|75
-47|61
-75|61
-47|29
-75|13
-53|13", @"75,47,61,53,29
-97,61,53,29,13
-75,29,13
-75,97,47,61,53
-61,13,29
-97,13,75,29,47", 143)]
+        [DataRow("47|53\r\n97|13\r\n97|61\r\n97|47\r\n75|29\r\n61|13\r\n75|53\r\n29|13\r\n97|29\r\n53|29\r\n61|53\r\n97|53\r\n61|29\r\n47|13\r\n75|47\r\n97|75\r\n47|61\r\n75|61\r\n47|29\r\n75|13\r\n53|13"
+            , "75,47,61,53,29\r\n97,61,53,29,13\r\n75,29,13\r\n75,97,47,61,53\r\n61,13,29\r\n97,13,75,29,47", 143)]
         public void Day5ComputeTest(string rules, string updates, int expected)
         {
             var day5 = new Day5(rules, updates);
@@ -242,33 +110,8 @@ MXMXAXMASX", 9)]
         }
 
         [TestMethod()]
-        [DataRow(@"47|53
-97|13
-97|61
-97|47
-75|29
-61|13
-75|53
-29|13
-97|29
-53|29
-61|53
-97|53
-61|29
-47|13
-75|47
-97|75
-47|61
-75|61
-47|29
-75|13
-53|13", 
-@"75,47,61,53,29
-97,61,53,29,13
-75,29,13
-75,97,47,61,53
-61,13,29
-97,13,75,29,47", 123)]
+        [DataRow("47|53\r\n97|13\r\n97|61\r\n97|47\r\n75|29\r\n61|13\r\n75|53\r\n29|13\r\n97|29\r\n53|29\r\n61|53\r\n97|53\r\n61|29\r\n47|13\r\n75|47\r\n97|75\r\n47|61\r\n75|61\r\n47|29\r\n75|13\r\n53|13"
+            , "75,47,61,53,29\r\n97,61,53,29,13\r\n75,29,13\r\n75,97,47,61,53\r\n61,13,29\r\n97,13,75,29,47", 123)]
         public void Day5BadComputeTest(string rules, string updates, int expected)
         {
             var day5 = new Day5(rules, updates);
