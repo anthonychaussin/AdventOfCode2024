@@ -280,7 +280,7 @@ namespace AdventOfCode2024
             else
             {
                 var done = 0;
-                Parallel.ForEach(savedGardianSteps, (s) =>
+                Parallel.ForEach(savedGardianSteps, new ParallelOptions { MaxDegreeOfParallelism = -1}, (s) =>
                 {
                     var day6 = new Day6() { TestMode = this.TestMode, SaveSteps = false };
                     day6.InitGame();
@@ -321,7 +321,7 @@ namespace AdventOfCode2024
             {
                 return false;
             }
-            if (this.PlayerObstacleDetection > 1)
+            if (this.PlayerObstacleDetection > 3)
             {
                 return true;
             }
@@ -337,7 +337,7 @@ namespace AdventOfCode2024
                     this.LastMap = this.MemoryMapToString();
                     return false;
                 }
-                if (this.PlayerLoopDetection > 10)
+                if (this.PlayerLoopDetection > 3)
                 {
                     return true;
                 }
