@@ -70,5 +70,11 @@ namespace AdventOfCode2024
             var day5 = new Day5();
             return Day5.CheckBadUpdates(day5.Updates, day5.Rules);
         }
+        public int Day6Compute()
+        {
+            var day6 = new Day6();
+            day6.Play();
+            return day6.GetResult();
+        }
     }
 }
