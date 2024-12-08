@@ -1,5 +1,4 @@
 ﻿using System.Collections.Concurrent;
-using System.Text.RegularExpressions;
 
 namespace AdventOfCode2024
 {
@@ -1181,6 +1180,7 @@ namespace AdventOfCode2024
 73|34
 73|75
 85|24";
+
         private string updates = @"89,52,29,54,92,77,13,17,58,83,73,15,22,69,71,75,11,57,62,28,68
 71,15,39,83,59,17,37,34,62,11,28,75,16,69,85,58,43,68,33
 98,13,12,17,58,83,73,15,22,33,75,11,57,62,28,68,37,16,85,59,31
@@ -1377,7 +1377,7 @@ namespace AdventOfCode2024
         {
             get
             {
-                var groupes =  this.rules
+                var groupes = this.rules
                     .Split("\r\n")
                     .ToList()
                     .ConvertAll(r =>
@@ -1393,7 +1393,8 @@ namespace AdventOfCode2024
             }
         }
 
-        public Day5() { }
+        public Day5()
+        { }
 
         public Day5(string rules, string updates)
         {
@@ -1460,7 +1461,7 @@ namespace AdventOfCode2024
             var badUpdates = checkedUpdates.Where(u => u.Item2 >= 0).ToList();
             var fixedUpdates = new ConcurrentBag<Tuple<List<int>, Int32>>();
 
-            foreach(var badUpdate in badUpdates)
+            foreach (var badUpdate in badUpdates)
             {
                 taskList.Add(Task.Run(() =>
                 {
@@ -1473,7 +1474,7 @@ namespace AdventOfCode2024
                 }));
             }
 
-            Task.WaitAll([.. taskList]);            
+            Task.WaitAll([.. taskList]);
             return fixedUpdates.ToList().ConvertAll(u => GetMiddleNumber(u.Item1)).Sum();
         }
 
@@ -1482,13 +1483,13 @@ namespace AdventOfCode2024
             var var1 = ints[index];
             var var2 = ints[index - 1];
             ints[index] = var2;
-            ints[index-1] = var1;
+            ints[index - 1] = var1;
             return ints;
         }
 
         private static Int32 GetMiddleNumber(List<int> updates)
         {
-            return updates[(updates.Count + 1) / 2-1];
+            return updates[(updates.Count + 1) / 2 - 1];
         }
     }
 }

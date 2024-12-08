@@ -38,7 +38,6 @@ how()[[)&?&:mul(218,640)]who()^{mul(108,530)*+}}~<;-mul(179,490)}'+how()~%$mul(3
 
             Task.WaitAll([.. taskList]);
             return operationBag.ToList().ConvertAll(t => t.Item1 * t.Item2).Sum();
-
         }
 
         public static Int32 Multiply2(String input)
@@ -61,7 +60,6 @@ how()[[)&?&:mul(218,640)]who()^{mul(108,530)*+}}~<;-mul(179,490)}'+how()~%$mul(3
 
             Task.WaitAll([.. taskList]);
             return operationBag.ToList().ConvertAll(t => t.Item1 * t.Item2).Sum();
-
         }
 
         private static List<string> Parser(string input)
@@ -106,8 +104,10 @@ how()[[)&?&:mul(218,640)]who()^{mul(108,530)*+}}~<;-mul(179,490)}'+how()~%$mul(3
 
         [GeneratedRegex(@"mul\(\d{1,3},\d{1,3}\)")]
         private static partial Regex MulRegex();
+
         [GeneratedRegex(@"(?<O>mul\(\d{1,3},\d{1,3}\))|(?<STOP>don't\(\))|(?<START>do\(\))")]
         private static partial Regex MulRegex2();
+
         [GeneratedRegex(@"\d{1,3}")]
         private static partial Regex NumberRegex();
     }

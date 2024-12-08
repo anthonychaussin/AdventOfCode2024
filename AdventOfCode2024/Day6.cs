@@ -1,9 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Data;
 using System.Drawing;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 
 namespace AdventOfCode2024
 {
@@ -19,6 +16,7 @@ namespace AdventOfCode2024
 ........#.
 #.........
 ......#...";
+
         private string map = @"..#.........#...#......#...........#.#...#............#...#.........#....#......................#......#..........................
 ...........#....#.............#.....................................#............................................#.....#..........
 .................#.........#.......#.......#..#............#.........#.........#............................................#.....
@@ -154,6 +152,7 @@ namespace AdventOfCode2024
         private int PlayerLoopDetection { get; set; } = 0;
         private int[][] MemoryMap { get; set; }
         private Point gardianPosition;
+
         private Point GardianPopsition
         {
             get
@@ -170,6 +169,7 @@ namespace AdventOfCode2024
                 }
             }
         }
+
         private List<Point> GardianSteps { get; set; } = [];
         private int Step { get; set; } = 0;
         private int CaseNumber { get; set; } = 0;
@@ -208,7 +208,7 @@ namespace AdventOfCode2024
 
         private char IntToStringConvnerteur(int chunk)
         {
-            if(chunk != 2)
+            if (chunk != 2)
             {
                 return chunk switch
                 {
@@ -220,7 +220,8 @@ namespace AdventOfCode2024
                     6 => 'O',
                     _ => throw new NotImplementedException(),
                 };
-            } else
+            }
+            else
             {
                 return this.GardianDirection switch
                 {
@@ -280,7 +281,7 @@ namespace AdventOfCode2024
             else
             {
                 var done = 0;
-                Parallel.ForEach(savedGardianSteps, new ParallelOptions { MaxDegreeOfParallelism = -1}, (s) =>
+                Parallel.ForEach(savedGardianSteps, new ParallelOptions { MaxDegreeOfParallelism = -1 }, (s) =>
                 {
                     var day6 = new Day6() { TestMode = this.TestMode, SaveSteps = false };
                     day6.InitGame();
@@ -325,7 +326,7 @@ namespace AdventOfCode2024
             {
                 return true;
             }
-            if(this.Step > this.CaseNumber)
+            if (this.Step > this.CaseNumber)
             {
                 if (this.LastMap == this.MemoryMapToString())
                 {
@@ -345,11 +346,11 @@ namespace AdventOfCode2024
                 {
                     return false;
                 }
-            } else
+            }
+            else
             {
                 return false;
             }
-            
         }
 
         public bool Walk()
@@ -414,7 +415,7 @@ namespace AdventOfCode2024
                 GARDIAN_DIRECTION.RIGHT => currentGardianPosition.X++,
                 _ => throw new NotImplementedException(),
             };
-        return currentGardianPosition;
+            return currentGardianPosition;
         }
 
         private void MakeTurn()

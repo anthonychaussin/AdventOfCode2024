@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2024
+﻿namespace AdventOfCode2024
 {
     public class Day2
     {
-        private string data = 
+        private string data =
 @"5 6 7 10 13 16 13
 19 21 24 27 28 28
 16 18 20 21 23 25 29
@@ -1012,12 +1006,14 @@ namespace AdventOfCode2024
 
         public List<List<int>> Data
         {
-            get { return data
+            get
+            {
+                return data
                     .Split("\r\n")
                     .ToList()
                     .ConvertAll(d => d.Split(" ")
                     .ToList()
-                    .ConvertAll(int.Parse)); 
+                    .ConvertAll(int.Parse));
             }
         }
 

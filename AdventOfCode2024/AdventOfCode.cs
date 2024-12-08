@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 
 namespace AdventOfCode2024
 {
@@ -70,11 +69,24 @@ namespace AdventOfCode2024
             var day5 = new Day5();
             return Day5.CheckBadUpdates(day5.Updates, day5.Rules);
         }
+
         public int Day6Compute()
         {
             var day6 = new Day6();
             day6.Play();
             return day6.GetResult();
+        }
+
+        public long Day7Compute()
+        {
+            var day = new Day7();
+            return Day7.FindAllPossibilities(day.Equations).Sum();
+        }
+
+        public long Day7BCompute()
+        {
+            var day = new Day7();
+            return Day7.FindAllPossibilities2(day.Equations).Sum();
         }
     }
 }

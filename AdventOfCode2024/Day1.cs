@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventOfCode2024
+﻿namespace AdventOfCode2024
 {
     public class Day1
     {
@@ -1012,7 +1006,8 @@ namespace AdventOfCode2024
 
         public List<List<int>> Data
         {
-            get {
+            get
+            {
                 var list1 = new List<int>();
                 var list2 = new List<int>();
                 data
@@ -1050,13 +1045,13 @@ namespace AdventOfCode2024
                 min2 = list2.Min();
                 list2Next.Remove(min2);
             }
-            
+
             return Math.Abs(min1 - min2) + Distance(list1Next, list2Next);
         }
 
         public static Int32 Similiarity(List<Int32> list1, List<Int32> list2)
         {
-            if(list1.Count == 0) return 0;
+            if (list1.Count == 0) return 0;
             var list1Next = list1.Take(new Range(1, list1.Count)).ToList();
 
             return list1.First() * list2.Count(e => e == list1.First()) + Similiarity(list1Next, list2);

@@ -176,7 +176,7 @@ AXXSSMSXMMMMMSMMSAMSSMXMSMASXSMXMASXMSSMXXMASXSXXXSAMXMAMXMMMMMXSSMXAXMASXMMMSAM
             var colonnes = new List<string>();
             var colonnesNumber = lines[0].Length;
 
-            for (Int32 c = 0; c < colonnesNumber-3; c++)
+            for (Int32 c = 0; c < colonnesNumber - 3; c++)
             {
                 var currentLine = "";
                 for (Int32 j = 0; j < lines.Length && j + c < colonnesNumber; j++)
@@ -186,7 +186,7 @@ AXXSSMSXMMMMMSMMSAMSSMXMSMASXSMXMASXMSSMXXMASXSXXXSAMXMAMXMMMMMXSSMXAXMASXMMMSAM
                 colonnes.Add(currentLine);
             }
 
-            for (Int32 l = 1; l < lines.Length-3; l++)
+            for (Int32 l = 1; l < lines.Length - 3; l++)
             {
                 var currentLine = "";
                 for (Int32 j = 0; j < colonnesNumber && j + l < lines.Length; j++)
@@ -215,12 +215,12 @@ AXXSSMSXMMMMMSMMSAMSSMXMSMASXSMXMASXMSSMXXMASXSXXXSAMXMAMXMMMMMXSSMXAXMASXMMMSAM
                 colonnes.Add(currentLine);
             }
 
-            for (Int32 l = lines.Length -4; l > 0; l--)
+            for (Int32 l = lines.Length - 4; l > 0; l--)
             {
                 var currentLine = "";
                 for (Int32 c = 0; c < colonnesNumber && l + c < lines.Length; c++)
                 {
-                    currentLine += lines[l + c][colonnesNumber-1 - c];
+                    currentLine += lines[l + c][colonnesNumber - 1 - c];
                 }
                 colonnes.Add(currentLine);
             }
@@ -234,7 +234,7 @@ AXXSSMSXMMMMMSMMSAMSSMXMSMASXSMXMASXMSSMXXMASXSXXXSAMXMAMXMMMMMXSSMXAXMASXMMMSAM
             var finded = 0;
             var colonnesNumber = lines[0].Length;
             var crossValues = new List<string>([
-                "MSAMS", 
+                "MSAMS",
                 "MMASS",
                 "SSAMM",
                 "SMASM",
@@ -273,6 +273,7 @@ AXXSSMSXMMMMMSMMSAMSSMXMSMASXSMXMASXMSSMXXMASXSXXXSAMXMAMXMMMMMXSSMXAXMASXMMMSAM
 
         [GeneratedRegex(@"XMAS")]
         private static partial Regex XMAS();
+
         [GeneratedRegex(@"SAMX")]
         private static partial Regex SMAX();
     }
